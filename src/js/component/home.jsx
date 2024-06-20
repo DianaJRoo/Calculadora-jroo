@@ -1,25 +1,69 @@
-import React from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, {useState} from "react";
+import "../../styles/home.css";
+import Boton from "./boton";
+import Pantalla from "./pantalla";
+import BotonClear from "./botonClear";
+import { Footer } from "./footer";
+import { FaPowerOff } from "react-icons/fa";
 
 //create your first component
 const Home = () => {
+
+const [input, setInput] = useState('');
+
+const agregarInput = (value) =>{
+setInput(input + value)
+};
+
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="container">
+
+			<div className="contenedor-calculadora">
+				<Pantalla input={input}/>
+				<div className="fila">
+					<Boton manejasClic={agregarInput}>1</Boton>
+					<Boton manejasClic={agregarInput}>2</Boton>
+					<Boton manejasClic={agregarInput}>3</Boton>
+					<Boton manejasClic={agregarInput}>+</Boton>
+
+				</div>
+				<div className="fila">
+					<Boton manejasClic={agregarInput}>4</Boton>
+					<Boton manejasClic={agregarInput}>5</Boton>
+					<Boton manejasClic={agregarInput}>6</Boton>
+					<Boton manejasClic={agregarInput}>-</Boton>
+
+
+				</div>
+				<div className="fila">
+					<Boton manejasClic={agregarInput}>7</Boton>
+					<Boton manejasClic={agregarInput}>8</Boton>
+					<Boton manejasClic={agregarInput}>9</Boton>
+					<Boton manejasClic={agregarInput}>*</Boton>
+
+
+				</div>
+				<div className="fila">
+					<Boton manejasClic={agregarInput}>=</Boton>
+					<Boton manejasClic={agregarInput}>0</Boton>
+					<Boton manejasClic={agregarInput}>.</Boton>
+					<Boton manejasClic={agregarInput}>/</Boton>
+
+				</div>
+				<div className="fila">
+					<BotonClear >Clear</BotonClear>
+					<BotonClear>
+					   <FaPowerOff />
+						
+					</BotonClear>
+				</div>
+			</div>
+		
+				<Footer />
+			
 		</div>
+		
+		
 	);
 };
 
