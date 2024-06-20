@@ -1,10 +1,10 @@
 import React from "react";
 
 
-const Pantalla =({input}) =>{
+const Pantalla =({input, }) =>{
 
 return(
-<div className="input">
+<div className="input" >
   {input}
 
 </div>

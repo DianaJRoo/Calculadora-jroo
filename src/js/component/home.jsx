@@ -5,7 +5,7 @@ import Pantalla from "./pantalla";
 import BotonClear from "./botonClear";
 import { Footer } from "./footer";
 import { GiCoronation } from "react-icons/gi";
-import { evaluate } from "mathjs";
+import { evaluate, size } from "mathjs";
 import { CSSTransition } from "react-transition-group";
 
 
@@ -93,7 +93,7 @@ const Home = () => {
         </div>
         <div className="fila">
           <BotonClear manejarClear={clearInput}>Clear</BotonClear>
-          <BotonClear manejarClear={mensajeAleatorio}>
+          <BotonClear manejarClear={mensajeAleatorio} >
             <GiCoronation />
           </BotonClear>
         </div>
