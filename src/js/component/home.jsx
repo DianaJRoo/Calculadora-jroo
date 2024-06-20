@@ -5,8 +5,9 @@ import Pantalla from "./pantalla";
 import BotonClear from "./botonClear";
 import { Footer } from "./footer";
 import { GiCoronation } from "react-icons/gi";
-
 import { evaluate } from "mathjs";
+import { CSSTransition } from "react-transition-group";
+
 
 //create your first component
 const Home = () => {
@@ -16,15 +17,19 @@ const Home = () => {
   const maxInput = 18;
 
   const mensajesAleatorios = [
-	"Hoy no la cagues",
-	"Hombre no es gente",
-	"50/50 es una mierda",
-	
-
-
+    
+    "Hola Lindo!",
+    "Ya te dije que eres muy guapo?",
+    "Eres lo que me receto el doctor",
+    "Vamos por unos mojitos?",
+    "Que sexy te ves hoy",
+    "Tu sonrisa me ilumina la vida",
+    "Eres mi persona favorita",
+    "Eres arte en movimiento",
+    "Haces que mi corazón sonría",
+    "Contigo, todo es mejor"
+    
   ];
-  
-  }
 
   const agregarInput = (value) => {
     if (value === '.' || !isNaN(value)) {
@@ -53,11 +58,10 @@ const Home = () => {
     setOcultarOperador('');
   };
 
-  const mensajeAleatorio = (valor) =>{
-	let mensaje= mensajesAleatorios[Math.floor(Math.random() * mensajesAleatorios.length)];
-	setInput(mensaje)
-
-  }
+  const mensajeAleatorio = () => {
+    let mensaje = mensajesAleatorios[Math.floor(Math.random() * mensajesAleatorios.length)];
+    setInput(mensaje);
+  };
 
   return (
     <div className="container">
@@ -90,8 +94,7 @@ const Home = () => {
         <div className="fila">
           <BotonClear manejarClear={clearInput}>Clear</BotonClear>
           <BotonClear manejarClear={mensajeAleatorio}>
-		  <GiCoronation />
-
+            <GiCoronation />
           </BotonClear>
         </div>
       </div>

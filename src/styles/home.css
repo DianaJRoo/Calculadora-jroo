@@ -65,6 +65,7 @@
     margin-bottom: 20px;
     background-color: #0a0a23;
     display: flex;
+    flex: 1;
     align-items: center;
     justify-content: flex-end;
     font-weight: bold;
@@ -102,3 +103,4 @@
 .boton-clear:hover {
     background-color: aqua;
 }
+
